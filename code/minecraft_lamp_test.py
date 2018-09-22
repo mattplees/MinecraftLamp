@@ -8,6 +8,7 @@ red, green and blue LED's
 """
 
 import time
+import logging
 import minecraft_lamp
 
 LOGGER = logging.getLogger("__main__")
