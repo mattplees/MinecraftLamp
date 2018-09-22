@@ -135,17 +135,3 @@ class MinecraftLampLed(object):
         # Update to the next colour
         self.current_index = (self.current_index + 1) % len(self.colours)
         LOGGER.info('Colour = ' + self.colours[self.current_index][self.NAME_INDEX])
-
-
-if __name__ == "__main__":
-    try:
-        MCBOX = MinecraftLampLed(17, 27, 22)
-        for x in xrange(MCBOX.NUM_STEPS):
-            MCBOX.next_colour()
-            MCBOX.fade_in()
-            time.sleep(1.0)
-            MCBOX.fade_out()
-    except KeyboardInterrupt:
-        pass
-    finally:
-        MCBOX.cleanup()
