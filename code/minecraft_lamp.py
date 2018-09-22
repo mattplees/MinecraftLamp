@@ -83,7 +83,9 @@ class MinecraftLampLed(object):
         GPIO.cleanup()
 
     #pylint: disable-msg=R0913
-    def __fade(self, red_level, r_step, green_level, g_step, blue_level, b_step):
+    def __fade(self, red_level, r_step, 
+                    green_level, g_step, 
+                    blue_level, b_step):
         """
         Perform the fade operation
         """
