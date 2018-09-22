@@ -9,7 +9,6 @@ red, green and blue LED's
 
 import time
 import logging
-import logging
 import platform
 if platform.machine() == "armv6l" or platform.machine() == "armv7l":
     import RPi.GPIO as GPIO
