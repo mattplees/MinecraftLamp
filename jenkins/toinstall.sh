@@ -7,7 +7,6 @@ sudo apt install python-pytest -y
 sudo apt install cloc -y
 sudo apt install doxygen -y
 sudo apt install python-coverage -y 
-#sudo apt install python-pylint -y
 sudo apt install pylint -y
 sudo apt install python-autopep8
 sudo apt install python-examples -y
