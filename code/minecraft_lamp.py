@@ -17,8 +17,7 @@ else:
     import GPIOStub as GPIO
 import SetupConsoleLogger
 
-LOGGER = logging.getLogger(__name__)
-SetupConsoleLogger.setup_console_logger(LOGGER)
+MODULE_LOGGER = logging.getLogger("__main__.MinecraftLampLed")
 
 
 class MinecraftLampLed(object):

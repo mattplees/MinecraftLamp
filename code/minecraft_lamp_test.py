@@ -10,6 +10,9 @@ red, green and blue LED's
 import time
 import minecraft_lamp
 
+LOGGER = logging.getLogger("__main__")
+SetupConsoleLogger.setup_console_logger(LOGGER, logging.DEBUG)
+
 def test_minecraft_lamp_led(sleep_len=0):
     MCBOX = None
     try:
@@ -17,7 +20,7 @@ def test_minecraft_lamp_led(sleep_len=0):
         for x in xrange(8):
             MCBOX.next_colour()
             MCBOX.fade_in()
-            time.sleep(1.0)
+            time.sleep(sleep_len)
             MCBOX.fade_out()
     except KeyboardInterrupt:
         pass

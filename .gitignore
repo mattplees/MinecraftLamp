@@ -7,3 +7,4 @@ htmlcov/
 unittest.xml
 flake8.txt
 pylint.txt
+.cache/
