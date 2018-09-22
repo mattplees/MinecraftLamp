@@ -1,9 +1,17 @@
 #!/bin/bash
 
+sudo apt install python-autoflake -y
 sudo apt install python-flake8 -y
-
-pip install --upgrade pip
-sudo rm -rf ~/.local/lib/python2.7/site-packages/
+sudo apt install flake8 -y
+sudo apt install python-pytest -y
+sudo apt install cloc -y
+sudo apt install doxygen -y
+sudo apt install python-coverage -y 
+#sudo apt install python-pylint -y
+sudo apt install pylint -y
+sudo apt install python-autopep8
+sudo apt install python-examples -y
+sudo apt install yapf -y
 
 pip install pep8ify
 pip install yapf
@@ -17,3 +25,4 @@ pip install pylint
 pip install flake8
 pip install autopep8
 
+pip install --upgrade setuptools
