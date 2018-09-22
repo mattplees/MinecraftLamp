@@ -1,5 +1,5 @@
 #!/bin/bash
-export PATH=/var/lib/jenkins/.local/bin:$PATH
+export PATH=$PATH:/var/lib/jenkins/.local/bin
 
 rm -f *.xml
 rm -f *.sc
