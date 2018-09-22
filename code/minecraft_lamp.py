@@ -37,12 +37,14 @@ class MinecraftLampLed(object):
         """
         LOGGER.info("Initialising Minecraft Lamp")
 
-        self.colours = [[100, 0, 0, "Red (Redstone)"], [
-            50, 100, 100, "Cyan (Diamond)"
-        ], [100, 25, 0, "Orange (Copper)"], [0, 100, 0, "Green (Emerald)"],
-            [0, 0, 100,
-             "Blue (Lapis Lazuli)"], [100, 50, 0, "Yellow (Gold)"],
-            [100, 0, 100, "Magenta"], [100, 100, 100, "White"]]
+        self.colours = [[100, 0, 0, "Red (Redstone)"], 
+                        [50, 100, 100, "Cyan (Diamond)"], 
+                        [100, 25, 0, "Orange (Copper)"], 
+                        [0, 100, 0, "Green (Emerald)"],
+                        [0, 0, 100,"Blue (Lapis Lazuli)"], 
+                        [100, 50, 0, "Yellow (Gold)"],
+                        [100, 0, 100, "Magenta"], 
+                        [100, 100, 100, "White"]]
 
         # Use board pin numbering
         GPIO.setmode(GPIO.BCM)
@@ -80,13 +82,14 @@ class MinecraftLampLed(object):
         self.blue_led.ChangeDutyCycle(0)
         GPIO.cleanup()
 
-    def fade(self, red_level, r_step, green_level, g_step, blue_level, b_step):
+    #pylint: disable-msg=R0913
+    def __fade(self, red_level, r_step, green_level, g_step, blue_level, b_step):
         """
         Perform the fade operation
         """
         # For each step decreases or increase the level equally
         # until it reaches the number of steps
-        for x in xrange(self.NUM_STEPS):
+        for _ in xrange(self.NUM_STEPS):
             red_level += r_step
             green_level += g_step
             blue_level += b_step
@@ -111,7 +114,7 @@ class MinecraftLampLed(object):
         blue_level = self.colours[self.current_index][self.BLU_INDEX]
         blue_step = float(blue_level) / float(self.NUM_STEPS)
 
-        self.fade(red_level, -red_step, green_level, -green_step, blue_level,
+        self.__fade(red_level, -red_step, green_level, -green_step, blue_level,
                   -blue_step)
 
     def fade_in(self):
@@ -125,7 +128,7 @@ class MinecraftLampLed(object):
         blue_step = float(self.colours[self.current_index][
             self.BLU_INDEX]) / float(self.NUM_STEPS)
 
-        self.fade(0, red_step, 0, green_step, 0, blue_step)
+        self.__fade(0, red_step, 0, green_step, 0, blue_step)
 
     def next_colour(self):
         """
@@ -134,4 +137,4 @@ class MinecraftLampLed(object):
         # Update to the next colour
         self.current_index = (self.current_index + 1) % len(self.colours)
         LOGGER.info(
-            'Colour = ' + self.colours[self.current_index][self.NAME_INDEX])
+            'Colour =  %s', self.colours[self.current_index][self.NAME_INDEX])
