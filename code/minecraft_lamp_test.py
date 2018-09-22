@@ -8,12 +8,12 @@ red, green and blue LED's
 """
 
 import time
-import MinecraftLampLed
+import minecraft_lamp
 
 def test_minecraft_lamp_led(sleep_len=0):
     MCBOX = None
     try:
-        MCBOX = MinecraftLampLed.MinecraftLampLed(17, 27, 22)
+        MCBOX = minecraft_lamp.MinecraftLampLed(17, 27, 22)
         for x in xrange(8):
             MCBOX.next_colour()
             MCBOX.fade_in()
