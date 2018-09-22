@@ -39,12 +39,7 @@ echo "**************** $(date) - cloc complete ****************"
 #--------------------------------------------------------------
 # Create coverage report
 #--------------------------------------------------------------
-which coverage
-whereis coverage
 coverage erase
-
-which pytest
-whereis pytest
 pytest --junit-xml unittest.xml -s --cov=. --cov-config ./jenkins/.coveragerc \
        --cov-report=xml --cov-report=html --cov-report term-missing \
        code/minecraft_lamp.py
