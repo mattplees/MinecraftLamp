@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 """
-Cycles through a series of colours to represent a number of different 
+Cycles through a series of colours to represent a number of different
 minecraft block types.
 This should use an RGB LED, but might work if using three separate
 red, green and blue LED's
@@ -14,6 +14,7 @@ import minecraft_lamp
 
 LOGGER = logging.getLogger("__main__")
 SetupConsoleLogger.setup_console_logger(LOGGER, logging.DEBUG)
+
 
 def test_minecraft_lamp_led(sleep_len=0.0):
     MCBOX = None
@@ -28,7 +29,8 @@ def test_minecraft_lamp_led(sleep_len=0.0):
         pass
     finally:
         pass
-        #MCBOX.cleanup()
+        # MCBOX.cleanup()
+
 
 if __name__ == "__main__":
     test_minecraft_lamp_led(1.0)
