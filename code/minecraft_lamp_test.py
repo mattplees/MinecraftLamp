@@ -17,9 +17,8 @@ SetupConsoleLogger.setup_console_logger(LOGGER, logging.DEBUG)
 
 
 def test_minecraft_lamp_led(sleep_len=0.0):
-    MCBOX = None
+    MCBOX = minecraft_lamp.MinecraftLampLed(17, 27, 22)
     try:
-        MCBOX = minecraft_lamp.MinecraftLampLed(17, 27, 22)
         for x in xrange(8):
             MCBOX.next_colour()
             MCBOX.fade_in()
@@ -28,8 +27,7 @@ def test_minecraft_lamp_led(sleep_len=0.0):
     except KeyboardInterrupt:
         pass
     finally:
-        pass
-        # MCBOX.cleanup()
+        MCBOX.cleanup()
 
 
 if __name__ == "__main__":
