@@ -1,5 +1,5 @@
 #!/bin/bash
-#export PATH=/home/bodgeit/.local/bin:$PATH
+export PATH=/var/lib/jenkins/.local/bin:$PATH
 
 rm -f *.xml
 rm -f *.sc
