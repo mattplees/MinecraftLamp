@@ -10,8 +10,8 @@ red, green and blue LED's
 import time
 import MinecraftLampLed
 
-
-if __name__ == "__main__":
+def test_minecraft_lamp_led(sleep_len=0):
+    MCBOX = None
     try:
         MCBOX = MinecraftLampLed.MinecraftLampLed(17, 27, 22)
         for x in xrange(8):
@@ -23,3 +23,6 @@ if __name__ == "__main__":
         pass
     finally:
         MCBOX.cleanup()
+
+if __name__ == "__main__":
+    test_minecraft_lamp_led(1.0)
