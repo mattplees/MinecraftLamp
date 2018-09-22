@@ -8,12 +8,13 @@ red, green and blue LED's
 """
 
 import time
-import MinecraftLampLed
+import minecraft_lamp
 
 
 if __name__ == "__main__":
+    MCBOX = None
     try:
-        MCBOX = MinecraftLampLed.MinecraftLampLed(17, 27, 22)
+        MCBOX = minecraft_lamp.MinecraftLampLed(17, 27, 22)
         for x in xrange(8):
             MCBOX.next_colour()
             MCBOX.fade_in()
@@ -22,4 +23,5 @@ if __name__ == "__main__":
     except KeyboardInterrupt:
         pass
     finally:
-        MCBOX.cleanup()
+        pass
+        #MCBOX.cleanup()
