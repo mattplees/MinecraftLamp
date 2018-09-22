@@ -42,4 +42,4 @@ echo "**************** $(date) - cloc complete ****************"
 coverage erase
 pytest --junit-xml unittest.xml -s --cov=. --cov-config ./jenkins/.coveragerc \
        --cov-report=xml --cov-report=html --cov-report term-missing \
-       code/minecraft_lamp.py
+       code/minecraft_lamp_test.py
