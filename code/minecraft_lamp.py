@@ -37,14 +37,12 @@ class MinecraftLampLed(object):
         """
         LOGGER.info("Initialising Minecraft Lamp")
 
-        self.colours = [[100, 0, 0, "Red (Redstone)"], 
-                        [50, 100, 100, "Cyan (Diamond)"], 
-                        [100, 25, 0, "Orange (Copper)"], 
-                        [0, 100, 0, "Green (Emerald)"],
-                        [0, 0, 100,"Blue (Lapis Lazuli)"], 
-                        [100, 50, 0, "Yellow (Gold)"],
-                        [100, 0, 100, "Magenta"], 
-                        [100, 100, 100, "White"]]
+        self.colours = [[100, 0, 0, "Red (Redstone)"], [
+            50, 100, 100, "Cyan (Diamond)"
+        ], [100, 25, 0, "Orange (Copper)"], [0, 100, 0, "Green (Emerald)"],
+            [0, 0, 100,
+             "Blue (Lapis Lazuli)"], [100, 50, 0, "Yellow (Gold)"],
+            [100, 0, 100, "Magenta"], [100, 100, 100, "White"]]
 
         # Use board pin numbering
         GPIO.setmode(GPIO.BCM)
@@ -82,10 +80,9 @@ class MinecraftLampLed(object):
         self.blue_led.ChangeDutyCycle(0)
         GPIO.cleanup()
 
-    #pylint: disable-msg=R0913
-    def __fade(self, red_level, r_step, 
-                    green_level, g_step, 
-                    blue_level, b_step):
+    # pylint: disable-msg=R0913
+    def __fade(self, red_level, r_step, green_level, g_step, blue_level,
+               b_step):
         """
         Perform the fade operation
         """
@@ -117,7 +114,7 @@ class MinecraftLampLed(object):
         blue_step = float(blue_level) / float(self.NUM_STEPS)
 
         self.__fade(red_level, -red_step, green_level, -green_step, blue_level,
-                  -blue_step)
+                    -blue_step)
 
     def fade_in(self):
         """
@@ -138,5 +135,5 @@ class MinecraftLampLed(object):
         """
         # Update to the next colour
         self.current_index = (self.current_index + 1) % len(self.colours)
-        LOGGER.info(
-            'Colour =  %s', self.colours[self.current_index][self.NAME_INDEX])
+        LOGGER.info('Colour =  %s',
+                    self.colours[self.current_index][self.NAME_INDEX])
