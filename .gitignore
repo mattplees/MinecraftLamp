@@ -1,2 +1,9 @@
 *.pyc
 *.bak
+cloc.xml
+code/.coverage
+code/coverage.xml
+code/htmlcov/
+code/unittest.xml
+flake8.txt
+pylint.txt
