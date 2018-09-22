@@ -15,7 +15,7 @@ import minecraft_lamp
 LOGGER = logging.getLogger("__main__")
 SetupConsoleLogger.setup_console_logger(LOGGER, logging.DEBUG)
 
-def test_minecraft_lamp_led(sleep_len=0):
+def test_minecraft_lamp_led(sleep_len=0.0):
     MCBOX = None
     try:
         MCBOX = minecraft_lamp.MinecraftLampLed(17, 27, 22)
