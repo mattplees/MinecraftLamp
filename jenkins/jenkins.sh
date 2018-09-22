@@ -1,5 +1,5 @@
 #!/bin/bash
-export PATH=$PATH:/home/bodgeit/.local/bin/
+export PATH=/home/bodgeit/.local/bin:$PATH
 
 rm -f *.xml
 rm -f *.sc
@@ -39,8 +39,12 @@ echo "**************** $(date) - cloc complete ****************"
 #--------------------------------------------------------------
 # Create coverage report
 #--------------------------------------------------------------
+which coverage
+whereis coverage
 coverage erase
-cd code
-pytest --junit-xml unittest.xml -s --cov=. --cov-config ../jenkins/.coveragerc \
+
+which pytest
+whereis pytest
+pytest --junit-xml unittest.xml -s --cov=. --cov-config ./jenkins/.coveragerc \
        --cov-report=xml --cov-report=html --cov-report term-missing \
-       minecraft_lamp.py
+       code/minecraft_lamp.py
