@@ -27,7 +27,8 @@ def test_minecraft_lamp_led(sleep_len=0):
     except KeyboardInterrupt:
         pass
     finally:
-        MCBOX.cleanup()
+        pass
+        #MCBOX.cleanup()
 
 if __name__ == "__main__":
     test_minecraft_lamp_led(1.0)

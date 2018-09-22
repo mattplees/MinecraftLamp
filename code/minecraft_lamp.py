@@ -15,9 +15,8 @@ if platform.machine() == "armv6l" or platform.machine() == "armv7l":
     import RPi.GPIO as GPIO
 else:
     import GPIOStub as GPIO
-import SetupConsoleLogger
 
-MODULE_LOGGER = logging.getLogger("__main__.MinecraftLampLed")
+LOGGER = logging.getLogger("__main__.MinecraftLampLed")
 
 
 class MinecraftLampLed(object):
